@@ -25,7 +25,7 @@ public class RecipeDetailDao implements Dao<RecipeDetail>, SingleKeyDao<RecipeDe
 
     private static final String GET = """
             SELECT recipe_id, user_id, description,
-            active_cooking_time_minute, total_cooking_time_minute, number_of_portion
+            active_cooking_time_minute, total_cooking_time_minute, number_of_portions
             FROM cooking_project.cooking.recipe_detail
             WHERE recipe_id = ?
             """;

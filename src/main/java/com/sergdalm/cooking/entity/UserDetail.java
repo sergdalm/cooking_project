@@ -21,13 +21,9 @@ public class UserDetail {
     private String firstName;
     private String lastName;
     private LocalDate birthday;
-    @Getter
     private static final String USER_ID = "user_id";
-    @Getter
     private static final String FIRST_NAME = "first_name";
-    @Getter
     private static final String LAST_NAME = "last_name";
-    @Getter
     private static final String BIRTHDAY = "birthday";
 
     public static UserDetail build(ResultSet resultSet) {

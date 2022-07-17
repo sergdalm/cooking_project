@@ -20,13 +20,9 @@ public class RecipeInRecipe {
     private Integer usedRecipeId;
     private Integer gram;
     private String notes;
-    @Getter
     private static final String RECIPE_ID = "recipe_id";
-    @Getter
     private static final String USED_RECIPE_ID = "used_recipe_id";
-    @Getter
     private static final String GRAM = "gram";
-    @Getter
     private static final String NOTES = "notes";
 
 

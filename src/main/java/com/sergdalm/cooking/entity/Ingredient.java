@@ -23,19 +23,12 @@ public class Ingredient {
     private Double protein;
     private Double fat;
     private Double carbohydrate;
-    @Getter
     private static final String ID = "id";
-    @Getter
     private static final String NAME = "name";
-    @Getter
     private static final String WEIGHT_OF_ONE_PIECE_GRAM = "weight_of_one_piece_gram";
-    @Getter
     private static final String KILOCALORIES = "kilocalories";
-    @Getter
     private static final String PROTEIN = "protein_gr";
-    @Getter
     private static final String FAT = "fat_gr";
-    @Getter
     private static final String CARBOHYDRATE = "carbohydrate_gr";
 
 
@@ -53,5 +46,13 @@ public class Ingredient {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public static String getID() {
+        return ID;
+    }
+
+    public int getId() {
+        return  id;
     }
 }

@@ -17,9 +17,7 @@ import java.sql.SQLException;
 public class Spice {
     private Integer id;
     private String name;
-    @Getter
     private static final String ID = "id";
-    @Getter
     private static final String NAME = "name";
 
     public static Spice build(ResultSet resultSet) {
@@ -29,5 +27,13 @@ public class Spice {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public static String getID() {
+        return ID;
+    }
+
+    public int getId() {
+        return id;
     }
 }

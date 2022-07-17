@@ -19,11 +19,8 @@ public class RecipeSpice {
     private Integer recipeId;
     private Integer spiceId;
     private String notes;
-    @Getter
     private static final String RECIPE_ID = "recipe_id";
-    @Getter
     private static final String SPICE_ID = "spice_id";
-    @Getter
     private static final String NOTES = "notes";
 
     public static RecipeSpice build(ResultSet resultSet) {

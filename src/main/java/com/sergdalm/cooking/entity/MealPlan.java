@@ -18,11 +18,8 @@ public class MealPlan {
     private Integer id;
     private Integer userId;
     private String name;
-    @Getter
     private static final String ID = "id";
-    @Getter
     private static final String USER_ID = "user_id";
-    @Getter
     private static final String NAME = "name";
 
 
@@ -36,5 +33,13 @@ public class MealPlan {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public static String getID() {
+        return ID;
+    }
+
+    public int getId() {
+        return id;
     }
 }

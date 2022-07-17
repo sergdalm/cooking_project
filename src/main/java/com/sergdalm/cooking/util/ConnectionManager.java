@@ -1,7 +1,6 @@
 package com.sergdalm.cooking.util;
 
 import java.lang.reflect.Proxy;
-import java.net.CookieManager;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -22,7 +21,7 @@ public final class ConnectionManager {
 
     static {
         loadDriver();
-        initConnectionPool();
+//        initConnectionPool();
     }
 
     private ConnectionManager() {
@@ -35,7 +34,7 @@ public final class ConnectionManager {
         sourceConnections = new ArrayList<>(size);
         for (int i = 0; i < size; i++) {
             Connection connection = open();
-            Connection proxyConnection = (Connection) Proxy.newProxyInstance(CookieManager.class.getClassLoader(),
+            Connection proxyConnection = (Connection) Proxy.newProxyInstance(ConnectionManager.class.getClassLoader(),
                     new Class[]{Connection.class},
                     (proxy, method, args) -> method.getName().equals("close")
                             ? pool.add((Connection) proxy)
@@ -46,11 +45,12 @@ public final class ConnectionManager {
     }
 
     public static Connection get() {
-        try {
-            return pool.take();
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        return open();
+//        try {
+//            return pool.take();
+//        } catch (InterruptedException e) {
+//            throw new RuntimeException(e);
+//        }
     }
 
     private static Connection open() {
@@ -77,7 +77,8 @@ public final class ConnectionManager {
 
     private static void loadDriver() {
         try {
-            Class.forName(PropertiesUtil.get(DRIVER_KEY));
+//            Class.forName(PropertiesUtil.get(DRIVER_KEY));
+            Class.forName("org.postgresql.Driver");
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }

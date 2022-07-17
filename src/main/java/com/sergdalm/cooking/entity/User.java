@@ -20,9 +20,7 @@ public class User {
     private String username;
     private String password;
     private Boolean isAdmin;
-    @Getter
     private static final String ID = "id";
-    @Getter
     private static final String EMAIL = "email";
     private static final String USERNAME = "username";
     private static final String PASSWORD = "password";
@@ -39,5 +37,13 @@ public class User {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public static String getID() {
+        return ID;
+    }
+
+    public int getId() {
+        return id;
     }
 }

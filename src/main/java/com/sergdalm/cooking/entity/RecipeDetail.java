@@ -22,18 +22,12 @@ public class RecipeDetail {
     private Integer activeCookingTimeMinute;
     private Integer totalCookingTimeMinute;
     private Integer numberOfPortions;
-    @Getter
     private static final String RECIPE_ID = "recipe_id";
-    @Getter
     private static final String USER_ID = "user_id";
-    @Getter
     private static final String DESCRIPTION = "description";
-    @Getter
     private static final String ACTIVE_COOKING_TIME_MINUTE = "active_cooking_time_minute";
-    @Getter
     private static final String TOTAL_COOKING_TIME_MINUTE = "total_cooking_time_minute";
-    @Getter
-    private static final String NUMBER_OF_PORTION = "number_of_portion";
+    private static final String NUMBER_OF_PORTION = "number_of_portions";
 
     public static RecipeDetail build(ResultSet resultSet) {
         try {

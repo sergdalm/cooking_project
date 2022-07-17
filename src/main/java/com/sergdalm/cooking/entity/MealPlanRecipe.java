@@ -20,15 +20,10 @@ public class MealPlanRecipe {
     private Integer recipeId;
     private Integer dayNumber;
     private MealType mealType;
-    @Getter
     private static final String ID = "id";
-    @Getter
     private static final String MEAL_PLAN_ID = "meal_plan_id";
-    @Getter
     private static final String RECIPE_ID = "recipe_id";
-    @Getter
     private static final String DAY_NUMBER = "day_number";
-    @Getter
     private static final String MEAL_TYPE = "meal_type";
 
     public static MealPlanRecipe build(ResultSet resultSet) {
@@ -42,5 +37,13 @@ public class MealPlanRecipe {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public static String getID() {
+        return ID;
+    }
+
+    public int getId() {
+        return id;
     }
 }

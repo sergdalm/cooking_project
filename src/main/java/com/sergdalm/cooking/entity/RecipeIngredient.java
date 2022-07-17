@@ -18,7 +18,7 @@ import java.sql.SQLException;
 public class RecipeIngredient {
     private Integer recipeId;
     private Integer ingredientId;
-    private int gram;
+    private Integer gram;
     private String notes;
     @Getter
     private static final String RECIPE_ID = "recipe_id";

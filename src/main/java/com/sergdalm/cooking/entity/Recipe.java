@@ -17,9 +17,7 @@ import java.sql.SQLException;
 public class Recipe {
     private Integer id;
     private String name;
-    @Getter
     private static final String ID = "id";
-    @Getter
     private static final String NAME = "name";
 
     public static Recipe build(ResultSet resultSet) {
